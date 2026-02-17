@@ -1,22 +1,5 @@
 import Link from "next/link";
-
-// Placeholder data — will be replaced with actual blog data in Phase 3
-const placeholderPosts = [
-  {
-    slug: "building-this-website",
-    title: "Building My Personal Website with Next.js",
-    date: "2026-02-16",
-    description:
-      "A walkthrough of how I designed and built this site using Next.js, Tailwind CSS, and Markdown.",
-  },
-  {
-    slug: "my-first-post",
-    title: "Hello World — My First Blog Post",
-    date: "2026-02-15",
-    description:
-      "An introduction to who I am, what I do, and what you can expect from this blog.",
-  },
-];
+import { getAllPosts } from "@/lib/blog";
 
 function formatDate(dateString: string): string {
   return new Date(dateString).toLocaleDateString("en-US", {
@@ -27,6 +10,10 @@ function formatDate(dateString: string): string {
 }
 
 export function LatestPosts() {
+  const posts = getAllPosts().slice(0, 3);
+
+  if (posts.length === 0) return null;
+
   return (
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
@@ -45,7 +32,7 @@ export function LatestPosts() {
           </Link>
         </div>
         <div className="flex flex-col gap-6">
-          {placeholderPosts.map((post) => (
+          {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
