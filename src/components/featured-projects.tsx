@@ -25,8 +25,8 @@ export function FeaturedProjects() {
           </Link>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featured.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+          {featured.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
         <div className="mt-8 md:hidden text-center">

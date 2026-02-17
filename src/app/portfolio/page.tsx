@@ -18,8 +18,8 @@ export default function PortfolioPage() {
         something new and pushed my skills forward.
       </p>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+        {projects.map((project, index) => (
+          <ProjectCard key={project.title} project={project} index={index} />
         ))}
       </div>
     </div>

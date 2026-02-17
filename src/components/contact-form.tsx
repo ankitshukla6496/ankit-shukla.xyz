@@ -26,7 +26,7 @@ export function ContactForm() {
           type="text"
           placeholder="Your name"
           required
-          className="w-full border border-border rounded-lg px-4 py-3 text-text bg-white focus:outline-none focus:ring-2 focus:ring-highlight focus:border-transparent"
+          className="w-full border border-border rounded-xl px-4 py-3 text-text bg-white focus:outline-none focus:ring-2 focus:ring-highlight/50 focus:border-highlight transition-all duration-200 hover:border-highlight/30"
         />
       </div>
       <div>
@@ -39,7 +39,7 @@ export function ContactForm() {
           type="email"
           placeholder="your@email.com"
           required
-          className="w-full border border-border rounded-lg px-4 py-3 text-text bg-white focus:outline-none focus:ring-2 focus:ring-highlight focus:border-transparent"
+          className="w-full border border-border rounded-xl px-4 py-3 text-text bg-white focus:outline-none focus:ring-2 focus:ring-highlight/50 focus:border-highlight transition-all duration-200 hover:border-highlight/30"
         />
       </div>
       <div>
@@ -58,9 +58,14 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="bg-highlight text-white py-3 rounded-lg font-medium hover:opacity-90 transition disabled:opacity-50"
+        className="group relative overflow-hidden text-white py-3 px-6 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0"
+        style={{ background: 'linear-gradient(135deg, #e94560 0%, #f77f00 100%)' }}
       >
-        {isPending ? "Sending..." : "Send Message"}
+        <span className="relative z-10">{isPending ? "Sending..." : "Send Message"}</span>
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+          style={{ background: 'linear-gradient(135deg, #f77f00 0%, #e94560 100%)' }}
+        />
       </button>
       {state.success && (
         <p className="text-green-600 text-sm font-medium">
