@@ -1,0 +1,40 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://ankit-shukla.xyz"),
+  title: {
+    default: "Ankit Shukla",
+    template: "%s | Ankit Shukla",
+  },
+  description: "Personal website of Ankit Shukla — portfolio, blog, and more.",
+  openGraph: {
+    title: "Ankit Shukla",
+    description: "Personal website of Ankit Shukla.",
+    url: "https://ankit-shukla.xyz",
+    siteName: "Ankit Shukla",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className={`${inter.className} antialiased`}>
+        {children}
+      </body>
+    </html>
+  );
+}
