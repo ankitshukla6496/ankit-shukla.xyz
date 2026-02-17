@@ -1,7 +1,7 @@
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
+    <div className="flex items-center justify-center py-32">
       <h1 className="text-4xl font-bold text-primary">ankit-shukla.xyz</h1>
-    </main>
+    </div>
   );
 }
