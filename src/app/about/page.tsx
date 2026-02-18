@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JourneyTimeline } from "@/components/journey-timeline";
 
 export const metadata: Metadata = {
   title: "About",
@@ -10,42 +11,26 @@ const skills = [
   {
     category: "Frontend",
     items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS"],
+    gradient: "from-highlight to-accent-orange",
+    iconBg: "from-highlight/20 to-accent-orange/20",
   },
   {
     category: "Backend",
     items: ["Node.js", "Express", "Python", "REST APIs", "GraphQL"],
+    gradient: "from-accent-purple to-accent-blue",
+    iconBg: "from-accent-purple/20 to-accent-blue/20",
   },
   {
     category: "Database",
     items: ["PostgreSQL", "MongoDB", "Redis", "Prisma"],
+    gradient: "from-accent-blue to-highlight",
+    iconBg: "from-accent-blue/20 to-highlight/20",
   },
   {
     category: "Tools & DevOps",
     items: ["Git", "Docker", "Vercel", "AWS", "CI/CD"],
-  },
-];
-
-const experience = [
-  {
-    role: "Software Developer",
-    company: "Tech Company",
-    period: "2024 — Present",
-    description:
-      "Building and maintaining web applications using modern JavaScript frameworks. Working on performance optimization and implementing new features.",
-  },
-  {
-    role: "Junior Developer",
-    company: "Startup Inc.",
-    period: "2022 — 2024",
-    description:
-      "Developed full-stack features for a SaaS platform. Collaborated with design and product teams to ship user-facing improvements.",
-  },
-  {
-    role: "Freelance Developer",
-    company: "Self-Employed",
-    period: "2021 — 2022",
-    description:
-      "Built custom websites and web applications for small businesses and individual clients. Handled everything from design to deployment.",
+    gradient: "from-accent-orange to-accent-purple",
+    iconBg: "from-accent-orange/20 to-accent-purple/20",
   },
 ];
 
@@ -59,40 +44,56 @@ export default function AboutPage() {
         </h1>
         <div className="space-y-4 text-text-muted leading-relaxed">
           <p>
-            I&apos;m a developer based in India with a passion for building
-            things on the web. I enjoy working across the full stack, from
-            crafting responsive UIs to designing robust APIs and databases.
+            I&apos;m an engineer and product thinker with 7 years of experience
+            at Samsung R&amp;D, where I grew from Software Engineer to Chief
+            Engineer. I hold a BE (Honors) in Electronics &amp; Communication
+            from BITS Pilani, and I&apos;m currently pursuing my MS in Product
+            Management at Carnegie Mellon University.
           </p>
           <p>
-            My approach to development is grounded in simplicity and
-            practicality. I believe the best code is code that solves real
-            problems without unnecessary complexity. I care about performance,
-            accessibility, and writing code that other developers can understand
-            and maintain.
+            My approach to building products is grounded in simplicity and
+            user empathy. I believe the best solutions emerge at the intersection
+            of deep technical understanding and clear product thinking. I care
+            about shipping things that matter — performant, accessible, and
+            built to last.
           </p>
           <p>
-            When I&apos;m not coding, you&apos;ll find me exploring new
-            technologies, reading about software architecture, or contributing to
-            open-source projects. I&apos;m always looking for opportunities to
-            learn and grow.
+            When I&apos;m not building, you&apos;ll find me exploring new
+            technologies, participating in hackathons, or thinking about how
+            technology can solve real-world problems at scale.
           </p>
         </div>
       </section>
 
       {/* Skills Section */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold text-primary mb-8">Skills</h2>
-        <div className="grid sm:grid-cols-2 gap-8">
+        <div className="flex items-center gap-3 mb-8">
+          <h2 className="text-2xl font-bold text-primary">Skills</h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-highlight via-accent-purple to-accent-blue rounded-full" />
+        </div>
+        <div className="grid sm:grid-cols-2 gap-6">
           {skills.map((group) => (
-            <div key={group.category}>
-              <h3 className="text-sm font-semibold text-highlight uppercase tracking-wider mb-3">
-                {group.category}
-              </h3>
+            <div
+              key={group.category}
+              className={`p-6 rounded-2xl bg-gradient-to-br ${group.iconBg} border border-border/50 hover:border-highlight/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className={`w-10 h-10 rounded-xl bg-gradient-to-br ${group.gradient} flex items-center justify-center shadow-md`}
+                >
+                  <span className="text-white text-lg font-bold">
+                    {group.category.charAt(0)}
+                  </span>
+                </div>
+                <h3 className={`text-base font-bold bg-gradient-to-r ${group.gradient} bg-clip-text text-transparent`}>
+                  {group.category}
+                </h3>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {group.items.map((skill) => (
                   <span
                     key={skill}
-                    className="bg-surface text-text text-sm px-3 py-1.5 rounded-lg border border-border"
+                    className="bg-white/50 text-text text-sm px-3 py-1.5 rounded-lg border border-border/50 hover:border-highlight/50 transition-colors"
                   >
                     {skill}
                   </span>
@@ -103,27 +104,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Experience Timeline */}
-      <section>
-        <h2 className="text-2xl font-bold text-primary mb-8">Experience</h2>
-        <div className="space-y-8">
-          {experience.map((job, index) => (
-            <div
-              key={index}
-              className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:bg-highlight before:rounded-full after:absolute after:left-[5px] after:top-5 after:w-0.5 after:h-full after:bg-border last:after:hidden"
-            >
-              <p className="text-sm text-text-muted">{job.period}</p>
-              <h3 className="text-lg font-semibold text-primary">
-                {job.role}
-              </h3>
-              <p className="text-highlight text-sm font-medium">
-                {job.company}
-              </p>
-              <p className="text-text-muted mt-2">{job.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Journey Timeline */}
+      <JourneyTimeline />
     </div>
   );
 }
