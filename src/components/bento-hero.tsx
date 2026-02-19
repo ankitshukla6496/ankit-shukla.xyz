@@ -47,13 +47,54 @@ export function BentoHero() {
         Engineer turned product thinker. 7 years at Samsung, now MS Product Management at Carnegie Mellon.
       </p>
 
-      {/* Signature */}
-      <div
-        className="text-4xl md:text-5xl select-none"
-        style={{ fontFamily: 'var(--font-signature), cursive', color: '#1a1a2e', lineHeight: 1.3 }}
+      {/* Signature — SVG hand-drawn style matching gkoberger.com */}
+      <svg
+        viewBox="0 0 320 80"
+        className="w-64 md:w-80 select-none"
+        aria-label="Ankit Shukla signature"
+        fill="none"
+        stroke="#1a1a2e"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
-        Ankit Shukla
-      </div>
+        {/* A */}
+        <path d="M10 58 L22 18 L34 58" />
+        <path d="M14 42 L30 42" />
+        {/* n */}
+        <path d="M38 58 L38 36 Q44 28 52 36 L52 58" />
+        {/* k */}
+        <path d="M57 22 L57 58" />
+        <path d="M57 44 L67 32" />
+        <path d="M57 44 L68 58" />
+        {/* i */}
+        <path d="M73 36 L73 58" />
+        <circle cx="73" cy="29" r="1.5" fill="#1a1a2e" stroke="none" />
+        {/* t */}
+        <path d="M79 26 L79 58" />
+        <path d="M74 36 L85 36" />
+
+        {/* space */}
+
+        {/* S */}
+        <path d="M105 30 Q95 24 92 32 Q89 40 100 44 Q112 48 109 56 Q106 64 96 60" />
+        {/* h */}
+        <path d="M115 22 L115 58" />
+        <path d="M115 44 Q121 34 130 38 L130 58" />
+        {/* u */}
+        <path d="M135 36 L135 52 Q135 60 144 58 L144 36" />
+        {/* k */}
+        <path d="M150 22 L150 58" />
+        <path d="M150 44 L160 32" />
+        <path d="M150 44 L161 58" />
+        {/* l */}
+        <path d="M165 22 L165 58" />
+        {/* a */}
+        <path d="M178 42 Q178 34 172 34 Q166 34 166 42 Q166 50 172 50 Q178 50 178 42 L178 50" />
+
+        {/* decorative underline flourish */}
+        <path d="M8 66 Q80 72 160 68 Q240 64 310 70" strokeWidth="1.5" opacity="0.4" />
+      </svg>
 
     </section>
   );

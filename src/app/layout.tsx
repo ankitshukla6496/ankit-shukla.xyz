@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Pacifico } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -14,11 +14,6 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-display',
 });
 
-const pacifico = Pacifico({
-  subsets: ["latin"],
-  weight: "400",
-  variable: '--font-signature',
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ankit-shukla.xyz"),
@@ -48,7 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${pacifico.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
