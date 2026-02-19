@@ -55,12 +55,6 @@ export function BentoHero() {
         Ankit Shukla
       </div>
 
-      {/* Status badge */}
-      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 border border-green-200 text-green-700 text-xs font-mono">
-        <span className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0" style={{ animation: 'pulse-glow 2s ease-in-out infinite' }} />
-        MS PM @ CMU — Class of 2026
-      </div>
-
     </section>
   );
 }
