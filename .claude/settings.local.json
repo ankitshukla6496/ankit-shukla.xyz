@@ -30,7 +30,8 @@
       "Bash(git push:*)",
       "Bash(sips:*)",
       "Bash(ls:*)",
-      "WebFetch(domain:gkoberger.com)"
+      "WebFetch(domain:gkoberger.com)",
+      "WebFetch(domain:fontspace.io)"
     ]
   }
 }
