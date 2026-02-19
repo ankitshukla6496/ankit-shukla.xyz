@@ -150,10 +150,10 @@
 
 /* ── Light theme (homepage) ── */
 .light-theme {
-  --color-bg: #faf9f7;
-  --color-bg-subtle: #f3f1ed;
-  --color-bg-muted: #e8e4dc;
-  --color-bg-hover: #e0dbd1;
+  --color-bg: #f0e8d2;
+  --color-bg-subtle: #e8dfc6;
+  --color-bg-muted: #dfd5b8;
+  --color-bg-hover: #d6ccae;
   --color-accent: #3b82f6;
   --color-accent-hover: #2563eb;
   --color-accent-muted: rgba(59, 130, 246, 0.12);
@@ -168,7 +168,7 @@
   --color-border-hover: rgba(0, 0, 0, 0.15);
   --color-border-accent: rgba(59, 130, 246, 0.3);
   --color-success: #10b981;
-  background-color: #faf9f7;
+  background-color: #f0e8d2;
   color: #1a1a2e;
 }
 

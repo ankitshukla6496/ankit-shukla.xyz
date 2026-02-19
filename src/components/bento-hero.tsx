@@ -12,7 +12,7 @@ export function BentoHero() {
     >
 
       {/* Illustration */}
-      <div className="w-full max-w-xl mx-auto">
+      <div className="w-full max-w-xl mx-auto rounded-2xl overflow-hidden border-2 border-black shadow-md">
         {!imgError ? (
           <Image
             src="/images/illustration-hero.png"
