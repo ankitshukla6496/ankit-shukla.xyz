@@ -2,48 +2,59 @@
 
 import { useFadeIn } from '@/hooks/use-fade-in';
 
-interface Chapter {
-  number: number;
+interface Milestone {
+  id: number;
   org: string;
   type: 'education' | 'work';
   years: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   current?: boolean;
-  roles?: { year: string; title: string }[];
+  isCapstone?: boolean;
 }
 
-const chapters: Chapter[] = [
+const milestones: Milestone[] = [
   {
-    number: 1,
+    id: 1,
     org: 'BITS Pilani',
     type: 'education',
     years: '2014 \u2014 2018',
-    title: 'Bachelor of Engineering (Honors)',
-    subtitle: 'Electronics & Communication',
+    title: "Bachelor's (Honors.) Electronics & Communication",
+    subtitle: 'Pilani, India',
   },
   {
-    number: 2,
-    org: 'Samsung R&D',
+    id: 2,
+    org: 'Samsung',
     type: 'work',
-    years: '2018 \u2014 2025',
-    title: 'Software Engineer \u2192 Chief Engineer',
-    subtitle: '7 years building products used by millions',
-    roles: [
-      { year: '2018', title: 'Software Engineer' },
-      { year: '2020', title: 'Senior Software Engineer' },
-      { year: '2021', title: 'Lead Engineer' },
-      { year: '2023', title: 'Chief Engineer / PM' },
-    ],
+    years: '2018 \u2014 2024',
+    title: 'Software Engineer \u2192 Product Manager',
+    subtitle: '7 years building products & leading engineering teams',
   },
   {
-    number: 3,
-    org: 'Carnegie Mellon',
+    id: 3,
+    org: 'Carnegie Mellon University',
     type: 'education',
     years: '2025 \u2014 2026',
-    title: 'Master of Science',
-    subtitle: 'Product Management',
+    title: "Master's (Dean's List) Product Management",
+    subtitle: 'Pittsburgh, PA',
     current: true,
+  },
+  {
+    id: 4,
+    org: 'ServiceLink',
+    type: 'work',
+    years: 'Summer 2025',
+    title: 'Product Manager Intern',
+    subtitle: 'Design & shipping new features',
+  },
+  {
+    id: 5,
+    org: 'Honda',
+    type: 'work',
+    years: 'Fall 2025 \u2014 Present',
+    title: 'Product Manager (Capstone)',
+    subtitle: 'Leading cross-functional product initiative',
+    isCapstone: true,
   },
 ];
 
@@ -74,86 +85,65 @@ export function SnapshotTimeline() {
           />
         </div>
 
-        {/* Desktop: Horizontal Chapter Cards */}
+        {/* Desktop: Horizontal Milestone Timeline */}
         <div className="hidden md:block">
-          <div className="grid grid-cols-3 gap-0 items-stretch">
-            {chapters.map((ch, idx) => (
-              <div key={ch.number} className="flex items-stretch">
+          <div className="grid gap-0 items-stretch" style={{ gridTemplateColumns: `repeat(${milestones.length}, 1fr)` }}>
+            {milestones.map((m, idx) => (
+              <div key={m.id} className="flex items-stretch">
                 {/* Card */}
                 <div
                   className={`flex-1 relative rounded-2xl border p-6 transition-all duration-500 ${
-                    ch.current
+                    m.current
                       ? 'border-border-accent bg-accent-muted'
-                      : 'border-border bg-bg-muted hover:border-border-hover'
+                      : m.isCapstone
+                        ? 'border-border bg-bg-muted hover:border-border-hover ring-1 ring-accent/30'
+                        : 'border-border bg-bg-muted hover:border-border-hover'
                   } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
-                  {/* Chapter accent line on current */}
-                  {ch.current && (
+                  {/* Accent line on current/capstone */}
+                  {(m.current || m.isCapstone) && (
                     <div className="absolute top-0 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
                   )}
 
                   {/* Header row */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono text-accent font-medium">
-                      Chapter {ch.number}
+                    <span className="text-xs font-mono text-text-muted uppercase tracking-widest font-medium">
+                      {m.type}
                     </span>
                     <div className="flex items-center gap-2">
-                      {ch.current && (
+                      {m.current && (
                         <span className="flex items-center gap-1.5 text-[11px] font-mono text-success font-medium bg-success/10 px-2 py-0.5 rounded-full">
                           <span className="w-1.5 h-1.5 rounded-full bg-success" style={{ animation: 'pulse-glow 2s ease-in-out infinite' }} />
-                          NOW
+                          CURRENT
                         </span>
                       )}
-                      <span className="text-xs font-mono text-text-muted">{ch.years}</span>
+                      {m.isCapstone && (
+                        <span className="text-[11px] font-mono text-accent font-medium bg-accent/10 px-2 py-0.5 rounded-full">
+                          CAPSTONE
+                        </span>
+                      )}
                     </div>
                   </div>
 
-                  {/* Type badge */}
-                  <span className="inline-block text-[10px] font-mono text-text-muted uppercase tracking-widest mb-3">
-                    {ch.type}
-                  </span>
+                  {/* Year */}
+                  <span className="inline-block text-[10px] font-mono text-text-muted mb-3">{m.years}</span>
 
                   {/* Org name */}
-                  <h3 className="text-xl font-bold text-text mb-1" style={{ fontFamily: 'var(--font-display)' }}>
-                    {ch.org}
+                  <h3 className="text-lg font-bold text-text mb-1" style={{ fontFamily: 'var(--font-display)' }}>
+                    {m.org}
                   </h3>
 
                   {/* Title + Subtitle */}
-                  <p className="text-sm text-text-secondary mb-1">{ch.title}</p>
-                  <p className="text-sm text-text-muted">{ch.subtitle}</p>
-
-                  {/* Role progression (Samsung) */}
-                  {ch.roles && (
-                    <div className="mt-4 pt-4 border-t border-border space-y-2">
-                      {ch.roles.map((role, ri) => (
-                        <div
-                          key={ri}
-                          className={`flex items-center gap-3 transition-all duration-500 ${
-                            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-3'
-                          }`}
-                          style={{ transitionDelay: `${idx * 150 + ri * 80 + 300}ms` }}
-                        >
-                          <div
-                            className="flex-shrink-0 rounded-full bg-accent"
-                            style={{
-                              width: `${6 + ri * 2}px`,
-                              height: `${6 + ri * 2}px`,
-                            }}
-                          />
-                          <span className="text-xs font-mono text-text-muted w-10">{role.year}</span>
-                          <span className="text-sm text-text-secondary">{role.title}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  <p className="text-sm text-text-secondary mb-1">{m.title}</p>
+                  {m.subtitle && <p className="text-sm text-text-muted">{m.subtitle}</p>}
                 </div>
 
                 {/* Connector between cards */}
-                {idx < chapters.length - 1 && (
+                {idx < milestones.length - 1 && (
                   <div className="flex items-center px-2">
                     <div
-                      className={`w-8 h-px bg-border transition-all duration-700 ${
+                      className={`w-4 h-px bg-border transition-all duration-700 ${
                         isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
                       }`}
                       style={{
@@ -168,7 +158,7 @@ export function SnapshotTimeline() {
                       style={{ transitionDelay: `${(idx + 1) * 150 + 200}ms` }}
                     />
                     <div
-                      className={`w-8 h-px bg-border transition-all duration-700 ${
+                      className={`w-4 h-px bg-border transition-all duration-700 ${
                         isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
                       }`}
                       style={{
@@ -183,58 +173,51 @@ export function SnapshotTimeline() {
           </div>
         </div>
 
-        {/* Mobile: Vertical Cards */}
+        {/* Mobile: Vertical Milestones */}
         <div className="md:hidden relative pl-8">
           {/* Vertical connector line */}
           <div className="absolute left-3 top-0 bottom-0 w-px bg-border" />
 
           <div className="space-y-6">
-            {chapters.map((ch, idx) => (
+            {milestones.map((m, idx) => (
               <div
-                key={ch.number}
+                key={m.id}
                 className={`relative transition-all duration-500 ${
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
                 }`}
                 style={{ transitionDelay: `${idx * 120}ms` }}
               >
                 {/* Dot on the line */}
-                <div className={`absolute -left-8 top-6 w-2.5 h-2.5 rounded-full border-2 border-bg z-10 ${
-                  ch.current ? 'bg-success' : 'bg-accent'
+                <div className={`absolute -left-8 top-5 w-2.5 h-2.5 rounded-full border-2 border-bg z-10 ${
+                  m.current ? 'bg-success' : m.isCapstone ? 'bg-accent ring-1 ring-accent/50' : 'bg-accent'
                 }`} />
 
                 {/* Card */}
                 <div className={`rounded-xl border p-5 ${
-                  ch.current ? 'border-border-accent bg-accent-muted' : 'border-border bg-bg-muted'
+                  m.current ? 'border-border-accent bg-accent-muted' : m.isCapstone ? 'border-border bg-bg-muted ring-1 ring-accent/30' : 'border-border bg-bg-muted'
                 }`}>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-mono text-accent">Chapter {ch.number}</span>
-                    <span className="text-xs font-mono text-text-muted">{ch.years}</span>
+                    <span className="text-xs font-mono text-text-muted uppercase tracking-widest">{m.type}</span>
+                    <span className="text-xs font-mono text-text-muted">{m.years}</span>
                   </div>
 
                   <h3 className="text-lg font-bold text-text mb-1" style={{ fontFamily: 'var(--font-display)' }}>
-                    {ch.org}
+                    {m.org}
                   </h3>
-                  <p className="text-sm text-text-secondary">{ch.title}</p>
-                  <p className="text-xs text-text-muted mt-0.5">{ch.subtitle}</p>
+                  <p className="text-sm text-text-secondary">{m.title}</p>
+                  {m.subtitle && <p className="text-xs text-text-muted mt-0.5">{m.subtitle}</p>}
 
-                  {ch.current && (
+                  {m.current && (
                     <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-success mt-3 bg-success/10 px-2 py-0.5 rounded-full">
                       <span className="w-1.5 h-1.5 rounded-full bg-success" style={{ animation: 'pulse-glow 2s ease-in-out infinite' }} />
                       Current
                     </span>
                   )}
 
-                  {ch.roles && (
-                    <div className="mt-3 pt-3 border-t border-border space-y-1.5">
-                      {ch.roles.map((role, ri) => (
-                        <div key={ri} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0" />
-                          <span className="text-xs text-text-muted">
-                            <span className="font-mono">{role.year}</span> &middot; {role.title}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
+                  {m.isCapstone && (
+                    <span className="inline-block text-[11px] font-mono text-accent mt-3 bg-accent/10 px-2 py-0.5 rounded-full">
+                      Capstone
+                    </span>
                   )}
                 </div>
               </div>
