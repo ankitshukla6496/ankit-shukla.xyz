@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+      <h1
+        className="text-3xl md:text-4xl font-bold text-text mb-4"
+        style={{ fontFamily: 'var(--font-display)' }}
+      >
         Portfolio
       </h1>
       <p className="text-text-muted mb-10 max-w-2xl">

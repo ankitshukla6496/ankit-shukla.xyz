@@ -12,13 +12,16 @@ export default function BlogPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
-      <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+      <h1
+        className="text-3xl md:text-4xl font-bold text-text mb-4"
+        style={{ fontFamily: 'var(--font-display)' }}
+      >
         Blog
       </h1>
       <p className="text-text-muted mb-10">
         Thoughts on development, design, and technology.
       </p>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-6">
         {posts.map((post) => (
           <BlogPostCard key={post.slug} post={post} />
         ))}

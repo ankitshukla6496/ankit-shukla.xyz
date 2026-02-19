@@ -53,21 +53,24 @@ export default async function BlogPostPage({ params }: Props) {
       <header className="mb-10">
         <Link
           href="/blog"
-          className="text-sm text-text-muted hover:text-highlight transition-colors mb-4 inline-block"
+          className="text-sm text-text-muted hover:text-accent transition-colors mb-4 inline-block"
         >
           &larr; Back to blog
         </Link>
-        <time className="block text-sm text-text-muted mt-4">
+        <time className="block text-sm text-text-muted font-mono mt-4">
           {formatDate(post.date)}
         </time>
-        <h1 className="text-3xl md:text-4xl font-bold text-primary mt-2">
+        <h1
+          className="text-3xl md:text-4xl font-bold text-text mt-2"
+          style={{ fontFamily: 'var(--font-display)' }}
+        >
           {post.title}
         </h1>
         <div className="flex gap-2 mt-4">
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs bg-surface text-text-muted px-2 py-1 rounded"
+              className="text-xs bg-bg-hover text-text-muted px-2.5 py-1 rounded-full border border-border"
             >
               {tag}
             </span>
@@ -75,7 +78,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </header>
       <div
-        className="prose prose-lg max-w-none prose-headings:text-primary prose-a:text-highlight prose-code:text-accent"
+        className="prose prose-lg max-w-none prose-headings:text-text prose-a:text-accent prose-code:text-accent-hover prose-strong:text-text prose-p:text-text-secondary prose-li:text-text-secondary"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
     </article>
