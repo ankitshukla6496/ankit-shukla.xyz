@@ -55,7 +55,7 @@ export function BentoHero() {
       <div
         className="text-4xl md:text-5xl select-none"
         style={{
-          fontFamily: "'Dancing Script', 'Brush Script MT', cursive",
+          fontFamily: 'var(--font-signature), cursive',
           color: '#6b7280',
           lineHeight: 1.2,
         }}
