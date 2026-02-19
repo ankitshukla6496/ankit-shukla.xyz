@@ -26,7 +26,7 @@ export function ContactForm() {
           type="text"
           placeholder="Your name"
           required
-          className="w-full border border-border rounded-xl px-4 py-3 text-text bg-white focus:outline-none focus:ring-2 focus:ring-highlight/50 focus:border-highlight transition-all duration-200 hover:border-highlight/30"
+          className="w-full border border-border rounded-xl px-4 py-3 text-text bg-bg-muted placeholder:text-text-muted/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-200 hover:border-border-hover"
         />
       </div>
       <div>
@@ -39,7 +39,7 @@ export function ContactForm() {
           type="email"
           placeholder="your@email.com"
           required
-          className="w-full border border-border rounded-xl px-4 py-3 text-text bg-white focus:outline-none focus:ring-2 focus:ring-highlight/50 focus:border-highlight transition-all duration-200 hover:border-highlight/30"
+          className="w-full border border-border rounded-xl px-4 py-3 text-text bg-bg-muted placeholder:text-text-muted/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-200 hover:border-border-hover"
         />
       </div>
       <div>
@@ -52,28 +52,23 @@ export function ContactForm() {
           placeholder="Your message..."
           rows={5}
           required
-          className="w-full border border-border rounded-lg px-4 py-3 text-text bg-white focus:outline-none focus:ring-2 focus:ring-highlight focus:border-transparent resize-none"
+          className="w-full border border-border rounded-xl px-4 py-3 text-text bg-bg-muted placeholder:text-text-muted/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-200 hover:border-border-hover resize-none"
         />
       </div>
       <button
         type="submit"
         disabled={isPending}
-        className="group relative overflow-hidden text-white py-3 px-6 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0"
-        style={{ background: 'linear-gradient(135deg, #e94560 0%, #f77f00 100%)' }}
+        className="bg-accent text-white py-3 px-6 rounded-xl font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg accent-glow disabled:opacity-50 disabled:hover:translate-y-0"
       >
-        <span className="relative z-10">{isPending ? "Sending..." : "Send Message"}</span>
-        <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
-          style={{ background: 'linear-gradient(135deg, #f77f00 0%, #e94560 100%)' }}
-        />
+        {isPending ? "Sending..." : "Send Message"}
       </button>
       {state.success && (
-        <p className="text-green-600 text-sm font-medium">
+        <p className="text-success text-sm font-medium">
           Message sent successfully! I&apos;ll get back to you soon.
         </p>
       )}
       {state.error && (
-        <p className="text-red-600 text-sm font-medium">{state.error}</p>
+        <p className="text-red-400 text-sm font-medium">{state.error}</p>
       )}
     </form>
   );
