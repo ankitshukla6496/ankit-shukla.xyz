@@ -43,7 +43,7 @@ export function BentoHero() {
       </h1>
 
       {/* Bio */}
-      <p className="text-sm md:text-base leading-relaxed max-w-2xl" style={{ color: '#6b7280' }}>
+      <p className="text-sm md:text-base leading-relaxed w-full max-w-4xl" style={{ color: '#6b7280' }}>
         Engineer turned product manager. Curiosity is my superpower :).<br />
         6+ years of experience in Product Management and Software Engineering. I bring business acumen of a Product Manager and problem-solving skills of an Engineer.<br />
         I am a Customer Advocate and Innovator who believes in the power of a Growth Mindset.
