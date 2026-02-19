@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Great_Vibes } from "next/font/google";
+import { Inter, Space_Grotesk, Pinyon_Script } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-display',
 });
 
-const greatVibes = Great_Vibes({
+const pinyonScript = Pinyon_Script({
   subsets: ["latin"],
   weight: "400",
   variable: '--font-signature',
@@ -49,7 +49,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${greatVibes.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} ${pinyonScript.variable} font-sans antialiased`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
