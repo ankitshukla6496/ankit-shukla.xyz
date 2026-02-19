@@ -25,7 +25,11 @@
       "Bash(npm run dev:*)",
       "Bash(lsof:*)",
       "Bash(kill:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(curl:*)",
+      "Bash(git push:*)",
+      "Bash(sips:*)",
+      "Bash(ls:*)"
     ]
   }
 }

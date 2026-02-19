@@ -42,7 +42,7 @@ export function IntroSection() {
             <div className="relative aspect-[3/4] max-w-sm mx-auto md:mx-0 rounded-2xl border border-border overflow-hidden bg-bg-muted hover:border-border-accent transition-all duration-300 group">
               {!imgError && (
                 <Image
-                  src="/images/photo-ankit-professional.jpg"
+                  src="/images/photo-ankit-professional.png"
                   alt="Ankit Shukla"
                   fill
                   className="object-cover"
