@@ -44,7 +44,9 @@ export function BentoHero() {
 
       {/* Bio */}
       <p className="text-sm md:text-base leading-relaxed max-w-lg" style={{ color: '#6b7280' }}>
-        Engineer turned product manager. Curiosity is my superpower :). 6+ years of experience in Product Management and Software Engineering. I bring business acumen of a Product Manager and problem-solving skills of an Engineer. I am a Customer Advocate and Innovator who believes in the power of a Growth Mindset.
+        Engineer turned product manager. Curiosity is my superpower :).<br />
+        6+ years of experience in Product Management and Software Engineering. I bring business acumen of a Product Manager and problem-solving skills of an Engineer.<br />
+        I am a Customer Advocate and Innovator who believes in the power of a Growth Mindset.
       </p>
 
       {/* Signature */}
