@@ -6,7 +6,9 @@ export function BentoHero() {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <section className="flex flex-col md:flex-row items-center md:items-end gap-6 md:gap-10 pt-6 pb-8 px-2">
+    <section className="flex flex-col md:flex-row items-center md:items-end gap-6 md:gap-10 px-2"
+      style={{ minHeight: 'calc(100vh - 64px)' }}
+    >
 
       {/* ── LEFT: Illustration ── takes ~55% width ── */}
       <div className="w-full md:w-[55%] shrink-0">
