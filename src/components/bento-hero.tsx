@@ -49,8 +49,8 @@ export function BentoHero() {
 
       {/* Signature */}
       <div
-        className="text-3xl md:text-4xl select-none"
-        style={{ fontFamily: 'var(--font-signature), cursive', color: '#9ca3af', lineHeight: 1.2 }}
+        className="text-4xl md:text-5xl select-none"
+        style={{ fontFamily: 'var(--font-signature), cursive', color: '#1a1a2e', lineHeight: 1.3 }}
       >
         Ankit Shukla
       </div>

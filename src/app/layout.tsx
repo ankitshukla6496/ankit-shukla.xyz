@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Dancing_Script } from "next/font/google";
+import { Inter, Space_Grotesk, Pacifico } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -14,9 +14,9 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-display',
 });
 
-const dancingScript = Dancing_Script({
+const pacifico = Pacifico({
   subsets: ["latin"],
-  weight: "700",
+  weight: "400",
   variable: '--font-signature',
 });
 
@@ -48,7 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${dancingScript.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} ${pacifico.variable} font-sans antialiased`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
