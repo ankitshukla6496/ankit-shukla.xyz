@@ -44,10 +44,10 @@ export function IntroSection() {
                 <Image
                   src="/images/photo-ankit-professional.png"
                   alt="Ankit Shukla"
-                  fill
-                  className="object-cover"
+                  width={800}
+                  height={810}
+                  className="w-full h-full object-cover"
                   priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   onError={() => setImgError(true)}
                 />
               )}
