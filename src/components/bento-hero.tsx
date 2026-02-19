@@ -43,8 +43,8 @@ export function BentoHero() {
       </h1>
 
       {/* Bio */}
-      <p className="text-sm md:text-base leading-relaxed max-w-sm" style={{ color: '#6b7280' }}>
-        Engineer turned product thinker. 7 years at Samsung, now MS Product Management at Carnegie Mellon.
+      <p className="text-sm md:text-base leading-relaxed max-w-lg" style={{ color: '#6b7280' }}>
+        Engineer turned product manager. Curiosity is my superpower :). 6+ years of experience in Product Management and Software Engineering. I bring business acumen of a Product Manager and problem-solving skills of an Engineer. I am a Customer Advocate and Innovator who believes in the power of a Growth Mindset.
       </p>
 
       {/* Signature */}
