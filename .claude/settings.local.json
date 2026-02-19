@@ -29,7 +29,8 @@
       "Bash(curl:*)",
       "Bash(git push:*)",
       "Bash(sips:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "WebFetch(domain:gkoberger.com)"
     ]
   }
 }
