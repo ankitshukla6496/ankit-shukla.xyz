@@ -2,126 +2,143 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Dark Base Colors */
-  --color-primary: #1a1a2e;
-  --color-secondary: #16213e;
-  --color-accent: #0f3460;
+  /* ── Canvas ── */
+  --color-bg: #0a0a0f;
+  --color-bg-subtle: #111118;
+  --color-bg-muted: #18181f;
+  --color-bg-hover: #1f1f28;
 
-  /* Multi-color Accent System */
-  --color-highlight: #e94560;
-  --color-accent-purple: #9d4edd;
-  --color-accent-blue: #4cc9f0;
-  --color-accent-orange: #f77f00;
+  /* ── Accent: Electric Indigo ── */
+  --color-accent: #6366f1;
+  --color-accent-hover: #818cf8;
+  --color-accent-muted: rgba(99, 102, 241, 0.15);
+  --color-accent-glow: rgba(99, 102, 241, 0.25);
 
-  /* Surface & Text */
-  --color-surface: #f8f9fa;
-  --color-text: #2d3436;
-  --color-text-muted: #636e72;
-  --color-border: #dfe6e9;
+  /* ── Text ── */
+  --color-text: #f0f0f3;
+  --color-text-secondary: #a0a0b0;
+  --color-text-muted: #606070;
 
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.18);
+  /* ── Borders ── */
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(255, 255, 255, 0.12);
+  --color-border-accent: rgba(99, 102, 241, 0.3);
 
-  /* Fonts */
+  /* ── Semantic ── */
+  --color-success: #34d399;
+
+  /* ── Glass (dark) ── */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.06);
+
+  /* ── Fonts ── */
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-display: "Space Grotesk", var(--font-sans);
   --font-mono: ui-monospace, "Cascadia Code", monospace;
 }
 
-/* Animation Keyframes */
-@keyframes mesh-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
+/* ── Keyframes ── */
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Scroll-Triggered Animations */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes reveal-line {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ── Scroll Animations ── */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.stagger-fade > * {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+/* ── Shimmer Text ── */
+.shimmer-text {
+  background: linear-gradient(110deg, var(--color-text) 35%, var(--color-accent-hover) 50%, var(--color-text) 65%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 5s ease-in-out infinite;
 }
 
-.stagger-fade.is-visible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
-.stagger-fade.is-visible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
-.stagger-fade.is-visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
-.stagger-fade.is-visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
-.stagger-fade.is-visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
-.stagger-fade.is-visible > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
-
-/* Colored Shadows */
-.shadow-highlight {
-  box-shadow: 0 10px 40px -10px rgba(233, 69, 96, 0.3);
+/* ── Accent Glow ── */
+.accent-glow {
+  box-shadow: 0 0 60px -12px var(--color-accent-glow), 0 0 120px -30px var(--color-accent-muted);
 }
 
-.shadow-purple {
-  box-shadow: 0 10px 40px -10px rgba(157, 78, 221, 0.3);
-}
-
-.shadow-blue {
-  box-shadow: 0 10px 40px -10px rgba(76, 201, 240, 0.3);
-}
-
-.shadow-glow {
-  box-shadow: 0 0 20px rgba(233, 69, 96, 0.2),
-              0 0 40px rgba(157, 78, 221, 0.1);
-}
-
-/* Glassmorphism */
+/* ── Glass (dark) ── */
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
 }
 
-.glass-strong {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+/* ── Nav Link Underline ── */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* ── Card top accent line ── */
+.card-accent { position: relative; overflow: hidden; border-radius: 16px; }
+.card-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  border-radius: 1px;
+  z-index: 1;
 }
 
-/* Reduced Motion */
+/* ── Prose (dark) ── */
+.prose {
+  --tw-prose-body: var(--color-text-secondary);
+  --tw-prose-headings: var(--color-text);
+  --tw-prose-links: var(--color-accent-hover);
+  --tw-prose-bold: var(--color-text);
+  --tw-prose-code: var(--color-accent-hover);
+  --tw-prose-pre-bg: var(--color-bg-muted);
+  --tw-prose-pre-code: var(--color-text-secondary);
+  --tw-prose-quotes: var(--color-text-secondary);
+  --tw-prose-quote-borders: var(--color-accent);
+  --tw-prose-hr: var(--color-border);
+}
+
+/* ── Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -131,5 +148,5 @@
 body {
   font-family: var(--font-sans);
   color: var(--color-text);
-  background-color: white;
+  background-color: var(--color-bg);
 }
