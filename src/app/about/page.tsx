@@ -11,26 +11,18 @@ const skills = [
   {
     category: "Frontend",
     items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS"],
-    gradient: "from-highlight to-accent-orange",
-    iconBg: "from-highlight/20 to-accent-orange/20",
   },
   {
     category: "Backend",
     items: ["Node.js", "Express", "Python", "REST APIs", "GraphQL"],
-    gradient: "from-accent-purple to-accent-blue",
-    iconBg: "from-accent-purple/20 to-accent-blue/20",
   },
   {
     category: "Database",
     items: ["PostgreSQL", "MongoDB", "Redis", "Prisma"],
-    gradient: "from-accent-blue to-highlight",
-    iconBg: "from-accent-blue/20 to-highlight/20",
   },
   {
     category: "Tools & DevOps",
     items: ["Git", "Docker", "Vercel", "AWS", "CI/CD"],
-    gradient: "from-accent-orange to-accent-purple",
-    iconBg: "from-accent-orange/20 to-accent-purple/20",
   },
 ];
 
@@ -39,7 +31,10 @@ export default function AboutPage() {
     <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
       {/* Bio Section */}
       <section className="mb-16">
-        <h1 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+        <h1
+          className="text-3xl md:text-4xl font-bold text-text mb-6"
+          style={{ fontFamily: 'var(--font-display)' }}
+        >
           About Me
         </h1>
         <div className="space-y-4 text-text-muted leading-relaxed">
@@ -67,25 +62,28 @@ export default function AboutPage() {
 
       {/* Skills Section */}
       <section className="mb-16">
-        <div className="flex items-center gap-3 mb-8">
-          <h2 className="text-2xl font-bold text-primary">Skills</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-highlight via-accent-purple to-accent-blue rounded-full" />
+        <div className="mb-8">
+          <h2
+            className="text-2xl font-bold text-text mb-3"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            Skills
+          </h2>
+          <div className="h-0.5 w-16 bg-accent rounded-full" />
         </div>
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-5">
           {skills.map((group) => (
             <div
               key={group.category}
-              className={`p-6 rounded-2xl bg-gradient-to-br ${group.iconBg} border border-border/50 hover:border-highlight/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}
+              className="p-6 rounded-2xl bg-bg-muted border border-border hover:border-border-accent transition-all duration-300 hover:-translate-y-0.5"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div
-                  className={`w-10 h-10 rounded-xl bg-gradient-to-br ${group.gradient} flex items-center justify-center shadow-md`}
-                >
-                  <span className="text-white text-lg font-bold">
+                <div className="w-10 h-10 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center">
+                  <span className="text-accent text-lg font-bold">
                     {group.category.charAt(0)}
                   </span>
                 </div>
-                <h3 className={`text-base font-bold bg-gradient-to-r ${group.gradient} bg-clip-text text-transparent`}>
+                <h3 className="text-base font-bold text-text">
                   {group.category}
                 </h3>
               </div>
@@ -93,7 +91,7 @@ export default function AboutPage() {
                 {group.items.map((skill) => (
                   <span
                     key={skill}
-                    className="bg-white/50 text-text text-sm px-3 py-1.5 rounded-lg border border-border/50 hover:border-highlight/50 transition-colors"
+                    className="bg-bg-hover text-text-secondary text-sm px-3 py-1.5 rounded-lg border border-border"
                   >
                     {skill}
                   </span>
