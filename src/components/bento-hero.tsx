@@ -6,25 +6,25 @@ export function BentoHero() {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <section className="flex flex-col items-center text-center gap-3 pt-4 pb-6 px-4">
+    <section className="flex flex-col items-center text-center gap-4 pt-4 pb-6 px-4">
 
-      {/* ── Illustration — constrained height so it doesn't eat the screen ── */}
-      <div className="w-full max-w-sm mx-auto">
+      {/* ── Illustration ── */}
+      <div className="w-full max-w-lg mx-auto">
         {!imgError ? (
           <Image
             src="/images/illustration-hero.png"
             alt="Ankit Shukla at his desk"
-            width={600}
-            height={450}
-            className="w-full h-auto max-h-56 object-contain"
+            width={700}
+            height={500}
+            className="w-full h-auto max-h-72 object-contain"
             priority
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full h-44 rounded-2xl bg-amber-50 border-2 border-dashed border-amber-200 flex flex-col items-center justify-center gap-2 text-amber-400">
-            <span className="text-3xl">🎨</span>
-            <span className="text-xs font-mono text-amber-500">Save illustration to</span>
-            <span className="text-[10px] font-mono text-amber-400 bg-amber-100 px-2 py-0.5 rounded">
+          <div className="w-full h-56 rounded-2xl bg-amber-50 border-2 border-dashed border-amber-200 flex flex-col items-center justify-center gap-2 text-amber-400">
+            <span className="text-4xl">🎨</span>
+            <span className="text-sm font-mono text-amber-500">Save illustration to</span>
+            <span className="text-xs font-mono text-amber-400 bg-amber-100 px-2 py-0.5 rounded">
               /public/images/illustration-hero.png
             </span>
           </div>
@@ -33,15 +33,15 @@ export function BentoHero() {
 
       {/* ── Name ── */}
       <h1
-        className="text-3xl md:text-4xl font-bold tracking-tight leading-tight"
+        className="text-4xl md:text-5xl font-bold tracking-tight leading-tight"
         style={{ fontFamily: 'var(--font-display)', color: '#1a1a2e' }}
       >
         Ankit Shukla
       </h1>
 
-      {/* ── Bio — kept to one line on desktop ── */}
+      {/* ── Bio ── */}
       <p
-        className="text-sm max-w-md leading-relaxed"
+        className="text-sm md:text-base max-w-md leading-relaxed"
         style={{ color: '#6b7280' }}
       >
         Engineer turned product thinker. 7 years at Samsung, now MS Product Management at Carnegie Mellon.
@@ -49,7 +49,7 @@ export function BentoHero() {
 
       {/* ── Signature ── */}
       <div
-        className="text-3xl select-none"
+        className="text-3xl md:text-4xl select-none"
         style={{
           fontFamily: 'var(--font-signature), cursive',
           color: '#9ca3af',
