@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
+import { pulseInstagramCard } from '@/lib/pulse-instagram';
 
 function useHighlight() {
   const highlight = (id: string) => {
@@ -147,7 +148,12 @@ export function BentoHero() {
           </a>
 
           {/* Instagram → DSLR camera (far right on desk) */}
-          <a href="#socials" style={{ cursor: 'pointer' }}>
+          <a href="#socials" style={{ cursor: 'pointer' }}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('socials')?.scrollIntoView({ behavior: 'smooth' });
+              setTimeout(pulseInstagramCard, 400);
+            }}>
             <g className="sketch-annotation">
               <g className="annotation-label">
                 <text x="1015" y="419" fontFamily="var(--font-dancing), cursive"
