@@ -23,10 +23,10 @@ export default function HomePage() {
             border: '1.5px solid rgba(0,0,0,0.18)',
           }}>
             {/* 2014–Present top-right corner */}
-            <span className="absolute top-4 right-6 text-[10px] font-mono tracking-widest" style={{ color: '#7a6040', opacity: 0.55 }}>2014 – Present</span>
+            <span className="absolute top-4 right-4 md:right-6 text-[10px] font-mono tracking-widest" style={{ color: '#7a6040', opacity: 0.55 }}>2014 – Present</span>
 
             {/* Header strip */}
-            <div className="flex items-center justify-between px-8 pt-7 pb-3">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between px-4 md:px-8 pt-7 pb-3 gap-2">
               <h2 style={{
                 fontFamily: 'var(--font-dancing)',
                 fontSize: 'clamp(2rem, 4vw, 2.8rem)',
@@ -37,16 +37,16 @@ export default function HomePage() {
               }}>
                 My Journey
               </h2>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <span className="text-xs font-mono tracking-widest uppercase px-2.5 py-1 rounded-full" style={{ color: '#7a6040', background: 'rgba(120,96,64,0.08)', border: '1px solid rgba(120,96,64,0.18)' }}>🎓 Education</span>
                 <span className="text-xs font-mono" style={{ color: '#7a6040' }}>+</span>
                 <span className="text-xs font-mono tracking-widest uppercase px-2.5 py-1 rounded-full" style={{ color: '#7a6040', background: 'rgba(120,96,64,0.08)', border: '1px solid rgba(120,96,64,0.18)' }}>💼 Work Experience</span>
               </div>
             </div>
             {/* Thin accent line */}
-            <div className="mx-8 mb-5 h-px" style={{ background: 'linear-gradient(to right, #7a604055, transparent)' }} />
+            <div className="mx-4 md:mx-8 mb-5 h-px" style={{ background: 'linear-gradient(to right, #7a604055, transparent)' }} />
             {/* Timeline image */}
-            <div className="px-6 pb-7">
+            <div className="px-3 md:px-6 pb-7">
               <img
                 src="/images/myjourney-timeline.png"
                 alt="My Journey Timeline"
