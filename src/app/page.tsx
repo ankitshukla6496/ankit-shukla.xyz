@@ -16,29 +16,29 @@ export default function HomePage() {
 
         {/* ── Row 1: Projects | Timeline | Achievements ── */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-4">
-          <div className="md:col-span-5">
+          <div id="projects" className="md:col-span-5">
             <BentoProjects />
           </div>
-          <div className="md:col-span-4">
+          <div id="journey" className="md:col-span-4">
             <BentoTimeline />
           </div>
-          <div className="md:col-span-3">
+          <div id="achievements" className="md:col-span-3">
             <BentoAchievements />
           </div>
         </div>
 
         {/* ── Row 2: Skills | Travel | Instagram | LinkedIn | GitHub ── */}
         <div className="grid grid-cols-2 md:grid-cols-12 gap-4 pb-16">
-          <div className="col-span-2 md:col-span-4">
+          <div id="skills" className="col-span-2 md:col-span-4">
             <BentoSkills />
           </div>
-          <div className="col-span-2 md:col-span-4">
+          <div id="travel" className="col-span-2 md:col-span-4">
             <BentoTravel />
           </div>
           <div className="col-span-1 md:col-span-2">
             <InstagramCard />
           </div>
-          <div className="col-span-1 md:col-span-2">
+          <div id="linkedin" className="col-span-1 md:col-span-2">
             <LinkedInCard />
           </div>
         </div>
