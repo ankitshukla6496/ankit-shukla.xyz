@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Pinyon_Script } from "next/font/google";
+import { Inter, Space_Grotesk, Pinyon_Script, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -18,6 +18,11 @@ const pinyonScript = Pinyon_Script({
   subsets: ["latin"],
   weight: "400",
   variable: '--font-signature',
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  variable: '--font-dancing',
 });
 
 
@@ -49,7 +54,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${pinyonScript.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} ${pinyonScript.variable} ${dancingScript.variable} font-sans antialiased`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
