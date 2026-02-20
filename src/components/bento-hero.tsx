@@ -173,7 +173,7 @@ export function BentoHero() {
           </a>
 
           {/* Favourite Hobby → map on desk (right-center desk) */}
-          <a href="#travel" style={{ cursor: 'pointer' }}
+          <a href="#hobby" style={{ cursor: 'pointer' }}
             onMouseEnter={() => highlight('travel')}
             onMouseLeave={() => unhighlight('travel')}>
             <g className="sketch-annotation">
