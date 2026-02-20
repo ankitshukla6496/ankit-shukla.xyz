@@ -179,7 +179,8 @@ export default function HomePage() {
                 <span className="text-gray-400 group-hover:translate-x-1 transition-transform text-lg">→</span>
               </a>
               {/* Instagram */}
-              <a id="instagram-social-card" href="https://instagram.com/ankit.shukla.ig" target="_blank" rel="noopener noreferrer"
+              <div id="instagram-social-card">
+              <a href="https://instagram.com/ankit.shukla.ig" target="_blank" rel="noopener noreferrer"
                 className="instagram-card flex items-center gap-4 rounded-xl p-4 group"
               >
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110"
@@ -194,6 +195,7 @@ export default function HomePage() {
                 </div>
                 <span className="text-pink-400 group-hover:translate-x-1 transition-transform text-lg">→</span>
               </a>
+              </div>
             </div>
             {/* Tagline + email */}
             <div className="px-4 md:px-8 pt-5 pb-7">
