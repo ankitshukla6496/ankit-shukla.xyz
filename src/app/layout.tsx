@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Pinyon_Script, Dancing_Script } from "next/font/google";
+import { Inter, Space_Grotesk, Pinyon_Script, Dancing_Script, Great_Vibes, Allura } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -23,6 +23,18 @@ const pinyonScript = Pinyon_Script({
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
   variable: '--font-dancing',
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: '--font-great-vibes',
+});
+
+const allura = Allura({
+  subsets: ["latin"],
+  weight: "400",
+  variable: '--font-allura',
 });
 
 
@@ -54,7 +66,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${pinyonScript.variable} ${dancingScript.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} ${pinyonScript.variable} ${dancingScript.variable} ${greatVibes.variable} ${allura.variable} font-sans antialiased`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

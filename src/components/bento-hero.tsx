@@ -209,15 +209,12 @@ export function BentoHero() {
       <div
         className="select-none"
         style={{
-          fontFamily: 'var(--font-signature)',
+          fontFamily: 'var(--font-dancing)',
           color: '#1a1a2e',
           fontSize: 'clamp(3.5rem, 8vw, 6rem)',
           lineHeight: 1.1,
-          transform: 'rotate(-2deg)',
-          display: 'inline-block',
           letterSpacing: '0.02em',
-          filter: 'drop-shadow(1px 2px 0px rgba(26,26,46,0.18))',
-          padding: '0.1em 0.3em',
+          fontWeight: 400,
         }}
       >
         Ankit Shukla
