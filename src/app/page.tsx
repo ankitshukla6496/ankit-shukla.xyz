@@ -85,22 +85,9 @@ export default function HomePage() {
             </div>
             {/* Thin accent line */}
             <div className="mx-4 md:mx-8 mb-5 h-px" style={{ background: 'linear-gradient(to right, #7a604055, transparent)' }} />
-            {/* Photo left + cards right */}
-            <div className="flex flex-col md:flex-row gap-5 px-4 md:px-8 pb-7 items-start">
-              {/* Photo */}
-              <div className="flex-shrink-0 w-full md:w-auto flex justify-center md:block">
-                <img
-                  src="/images/achievements/awards1.png"
-                  alt="Awards & Certificates"
-                  className="h-auto object-contain rounded-xl"
-                  style={{
-                    width: 'min(220px, 55vw)',
-                    boxShadow: '0 8px 32px rgba(10,60,40,0.12), 0 2px 8px rgba(10,60,40,0.08)',
-                  }}
-                />
-              </div>
-              {/* Cards grid */}
-              <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-3">
+            {/* Achievement cards — full width */}
+            <div className="px-4 md:px-8 pb-5">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {[
                   { icon: '🏆', title: 'ProdHacks Winner', subtitle: 'Hackathon · CMU · 2025', bg: 'linear-gradient(135deg, #fffbeb, #fff7ed)', border: 'rgba(217,119,6,0.25)' },
                   { icon: '🔬', title: '3 U.S. Patents', subtitle: 'Imaging & Camera Tech', bg: 'linear-gradient(135deg, #f5f3ff, #ede9fe)', border: 'rgba(124,58,237,0.22)' },
@@ -121,6 +108,27 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
+            </div>
+            {/* Photo gallery — fixed height, natural width, no crop */}
+            <div className="px-4 md:px-8 pb-7 flex flex-row gap-3 items-end">
+              <img
+                src="/images/achievements/awards3.jpeg"
+                alt="ProdHacks Winner — CMU 2025"
+                className="rounded-lg flex-shrink-0 w-auto"
+                style={{ height: '140px', boxShadow: '0 4px 16px rgba(92,64,32,0.12)' }}
+              />
+              <img
+                src="/images/achievements/awards2.jpeg"
+                alt="Samsung Annual Award"
+                className="rounded-lg flex-shrink-0 w-auto"
+                style={{ height: '140px', boxShadow: '0 4px 16px rgba(92,64,32,0.12)' }}
+              />
+              <img
+                src="/images/achievements/awards1.png"
+                alt="Award Certificates"
+                className="rounded-lg flex-shrink-0 w-auto"
+                style={{ height: '140px', boxShadow: '0 4px 16px rgba(92,64,32,0.12)' }}
+              />
             </div>
           </div>
         </section>
