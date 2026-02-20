@@ -2,6 +2,7 @@ import { BentoHero } from "@/components/bento-hero";
 import { BentoTimeline } from "@/components/bento-timeline";
 import { BentoProjects } from "@/components/bento-projects";
 import { BentoSkills } from "@/components/bento-skills";
+import { InstagramLink } from "@/components/instagram-link";
 
 export default function HomePage() {
   return (
@@ -179,7 +180,7 @@ export default function HomePage() {
                 <span className="text-gray-400 group-hover:translate-x-1 transition-transform text-lg">→</span>
               </a>
               {/* Instagram */}
-              <div id="instagram-social-card">
+              <div id="instagram-social-card" className="contents">
               <a href="https://instagram.com/ankit.shukla.ig" target="_blank" rel="noopener noreferrer"
                 className="instagram-card flex items-center gap-4 rounded-xl p-4 group"
               >
@@ -239,7 +240,7 @@ export default function HomePage() {
               <p className="text-base leading-relaxed" style={{ color: '#5c4020' }}>
                 I enjoy meeting new people and exploring different cultures.<br />
                 I've traveled to 9 countries so far, gaining diverse perspectives along the way.<br />
-                Follow me on{' '}<a href="#instagram-social-card" className="font-medium underline underline-offset-2 hover:opacity-70 transition-opacity" style={{ color: '#5c4020' }}>Instagram</a> for more.
+                Follow me on{' '}<InstagramLink /> for more.
               </p>
             </div>
             {/* Image */}
