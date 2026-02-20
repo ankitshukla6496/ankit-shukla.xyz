@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
-import { pulseInstagramCard } from '@/lib/pulse-instagram';
+import { pulseInstagramCard, pulseLinkedInCard, pulseGitHubCard } from '@/lib/pulse-instagram';
 
 function useHighlight() {
   const highlight = (id: string) => {
@@ -135,7 +135,12 @@ export function BentoHero() {
           {/* LinkedIn → blue water bottle (right side of desk) */}
           <a href="#socials" style={{ cursor: 'pointer' }}
             onMouseEnter={() => highlight('linkedin')}
-            onMouseLeave={() => unhighlight('linkedin')}>
+            onMouseLeave={() => unhighlight('linkedin')}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('socials')?.scrollIntoView({ behavior: 'smooth' });
+              setTimeout(pulseLinkedInCard, 400);
+            }}>
             <g className="sketch-annotation">
               <g className="annotation-label">
                 <text x="1015" y="359" fontFamily="var(--font-dancing), cursive"
@@ -166,7 +171,12 @@ export function BentoHero() {
           </a>
 
           {/* GitHub → GitHub cat mug (center-right on desk) */}
-          <a href="#socials" style={{ cursor: 'pointer' }}>
+          <a href="#socials" style={{ cursor: 'pointer' }}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('socials')?.scrollIntoView({ behavior: 'smooth' });
+              setTimeout(pulseGitHubCard, 400);
+            }}>
             <g className="sketch-annotation">
               <g className="annotation-label">
                 <text x="1015" y="474" fontFamily="var(--font-dancing), cursive"
