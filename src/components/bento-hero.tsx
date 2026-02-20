@@ -93,7 +93,7 @@ export function BentoHero() {
                 <text x="72" y="304" textAnchor="end" fontFamily="var(--font-dancing), cursive"
                   fontSize="30" fill="#1e3a5f">My Journey</text>
               </g>
-              <path d="M 82,294 C 145,284 195,282 354,318"
+              <path d="M 82,294 C 145,284 250,290 400,300"
                 stroke="#1e3a5f" strokeWidth="1.8" fill="none"
                 markerEnd="url(#ah-navy)" strokeLinecap="round" />
             </g>
@@ -108,7 +108,7 @@ export function BentoHero() {
                 <text x="52" y="437" textAnchor="end" fontFamily="var(--font-dancing), cursive"
                   fontSize="30" fill="#1a1a2e">My Skills</text>
               </g>
-              <path d="M 62,427 C 100,420 140,417 230,420"
+              <path d="M 62,427 C 100,420 180,410 260,400"
                 stroke="#1a1a2e" strokeWidth="1.8" fill="none"
                 markerEnd="url(#ah-dark)" strokeLinecap="round" />
             </g>
@@ -125,7 +125,7 @@ export function BentoHero() {
                 <text x="1015" y="64" fontFamily="var(--font-dancing), cursive"
                   fontSize="30" fill="#c0392b">My Achievements</text>
               </g>
-              <path d="M 1008,54 C 970,40 930,48 748,115"
+              <path d="M 1008,54 C 970,80 900,130 750,170"
                 stroke="#c0392b" strokeWidth="1.8" fill="none"
                 markerEnd="url(#ah-red)" strokeLinecap="round" />
             </g>
@@ -140,7 +140,7 @@ export function BentoHero() {
                 <text x="1015" y="359" fontFamily="var(--font-dancing), cursive"
                   fontSize="30" fill="#0077b5">My LinkedIn</text>
               </g>
-              <path d="M 1008,349 C 970,342 920,346 810,350"
+              <path d="M 1008,349 C 970,352 900,362 800,370"
                 stroke="#0077b5" strokeWidth="1.8" fill="none"
                 markerEnd="url(#ah-blue)" strokeLinecap="round" />
             </g>
@@ -153,7 +153,7 @@ export function BentoHero() {
                 <text x="1015" y="419" fontFamily="var(--font-dancing), cursive"
                   fontSize="30" fill="#e1306c">My Instagram</text>
               </g>
-              <path d="M 1008,409 C 990,405 960,405 895,400"
+              <path d="M 1008,409 C 980,408 920,405 850,400"
                 stroke="#e1306c" strokeWidth="1.8" fill="none"
                 markerEnd="url(#ah-instagram)" strokeLinecap="round" />
             </g>
@@ -166,7 +166,7 @@ export function BentoHero() {
                 <text x="1015" y="474" fontFamily="var(--font-dancing), cursive"
                   fontSize="30" fill="#1a1a2e">My GitHub</text>
               </g>
-              <path d="M 1008,464 C 970,455 880,438 760,420"
+              <path d="M 1008,464 C 970,455 880,438 735,420"
                 stroke="#1a1a2e" strokeWidth="1.8" fill="none"
                 markerEnd="url(#ah-dark)" strokeLinecap="round" />
             </g>
@@ -181,7 +181,7 @@ export function BentoHero() {
                 <text x="1015" y="534" fontFamily="var(--font-dancing), cursive"
                   fontSize="30" fill="#1e3a5f">My Favourite Hobby</text>
               </g>
-              <path d="M 1008,524 C 970,515 920,492 850,470"
+              <path d="M 1008,524 C 970,510 900,490 800,470"
                 stroke="#1e3a5f" strokeWidth="1.8" fill="none"
                 markerEnd="url(#ah-navy)" strokeLinecap="round" />
             </g>
