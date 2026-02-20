@@ -152,6 +152,7 @@ export default function HomePage() {
             {/* Social cards */}
             <div className="px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* LinkedIn */}
+              <div id="linkedin-social-card" className="contents">
               <a href="https://www.linkedin.com/in/shukla-ankit/" target="_blank" rel="noopener noreferrer"
                 className="linkedin-card flex items-center gap-4 rounded-xl p-4 group">
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" style={{ background: '#0077b5' }}>
@@ -165,7 +166,9 @@ export default function HomePage() {
                 </div>
                 <span className="text-blue-400 group-hover:translate-x-1 transition-transform text-lg">→</span>
               </a>
+              </div>
               {/* GitHub */}
+              <div id="github-social-card" className="contents">
               <a href="https://github.com/ankitshukla6496" target="_blank" rel="noopener noreferrer"
                 className="github-card flex items-center gap-4 rounded-xl p-4 group">
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 bg-gray-900 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
@@ -179,6 +182,7 @@ export default function HomePage() {
                 </div>
                 <span className="text-gray-400 group-hover:translate-x-1 transition-transform text-lg">→</span>
               </a>
+              </div>
               {/* Instagram */}
               <div id="instagram-social-card" className="contents">
               <a href="https://instagram.com/ankit.shukla.ig" target="_blank" rel="noopener noreferrer"
