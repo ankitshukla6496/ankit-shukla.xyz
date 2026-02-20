@@ -139,7 +139,7 @@ export default function HomePage() {
             border: '1.5px solid rgba(0,0,0,0.18)',
           }}>
             {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between px-4 md:px-8 pt-7 pb-3 gap-2">
+            <div className="px-4 md:px-8 pt-7 pb-3">
               <h2 style={{
                 fontFamily: 'var(--font-dancing)',
                 fontSize: 'clamp(2rem, 4vw, 2.8rem)',
@@ -147,17 +147,12 @@ export default function HomePage() {
                 fontWeight: 400,
                 lineHeight: 1,
                 textShadow: '0 1px 2px rgba(92,64,32,0.12)',
-              }}>Let's Connect</h2>
-              <a href="mailto:ankit.shukla.cmu@gmail.com"
-                className="text-xs font-mono tracking-wide px-3 py-1.5 rounded-full transition-colors"
-                style={{ color: '#7a6040', background: 'rgba(120,96,64,0.08)', border: '1px solid rgba(120,96,64,0.18)' }}>
-                ✉️ ankit.shukla.cmu@gmail.com
-              </a>
+              }}>My Socials</h2>
             </div>
             {/* Accent line */}
             <div className="mx-4 md:mx-8 mb-6 h-px" style={{ background: 'linear-gradient(to right, #7a604055, transparent)' }} />
             {/* Social cards */}
-            <div className="px-4 md:px-8 pb-7 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* LinkedIn */}
               <a href="https://www.linkedin.com/in/shukla-ankit/" target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-4 rounded-xl p-4 group transition-all"
@@ -204,6 +199,19 @@ export default function HomePage() {
                 </div>
                 <span className="text-pink-400 group-hover:translate-x-1 transition-transform text-lg">→</span>
               </a>
+            </div>
+            {/* Tagline + email */}
+            <div className="px-4 md:px-8 pt-5 pb-7">
+              <p className="text-base leading-relaxed" style={{ color: '#5c4020' }}>
+                I enjoy talking about anything and everything shaping our world.
+                Always curious, Always learning.<br />
+                Reach me at:{' '}
+                <a href="mailto:ankit.shukla.cmu@gmail.com"
+                  className="font-medium underline underline-offset-2 hover:opacity-70 transition-opacity"
+                  style={{ color: '#5c4020' }}>
+                  ankit.shukla.cmu@gmail.com
+                </a>
+              </p>
             </div>
           </div>
         </section>
