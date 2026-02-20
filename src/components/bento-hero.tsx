@@ -132,7 +132,7 @@ export function BentoHero() {
           </a>
 
           {/* LinkedIn → blue water bottle (right side of desk) */}
-          <a href="#linkedin" style={{ cursor: 'pointer' }}
+          <a href="#socials" style={{ cursor: 'pointer' }}
             onMouseEnter={() => highlight('linkedin')}
             onMouseLeave={() => unhighlight('linkedin')}>
             <g className="sketch-annotation">
@@ -147,7 +147,7 @@ export function BentoHero() {
           </a>
 
           {/* Instagram → DSLR camera (far right on desk) */}
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ cursor: 'pointer' }}>
+          <a href="#socials" style={{ cursor: 'pointer' }}>
             <g className="sketch-annotation">
               <g className="annotation-label">
                 <text x="1015" y="419" fontFamily="var(--font-dancing), cursive"
@@ -160,7 +160,7 @@ export function BentoHero() {
           </a>
 
           {/* GitHub → GitHub cat mug (center-right on desk) */}
-          <a href="https://github.com/ankitshukla6496" target="_blank" rel="noopener noreferrer" style={{ cursor: 'pointer' }}>
+          <a href="#socials" style={{ cursor: 'pointer' }}>
             <g className="sketch-annotation">
               <g className="annotation-label">
                 <text x="1015" y="474" fontFamily="var(--font-dancing), cursive"
