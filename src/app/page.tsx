@@ -2,7 +2,6 @@ import { BentoHero } from "@/components/bento-hero";
 import { BentoTimeline } from "@/components/bento-timeline";
 import { BentoProjects } from "@/components/bento-projects";
 import { BentoSkills } from "@/components/bento-skills";
-import { BentoTravel } from "@/components/bento-travel";
 
 export default function HomePage() {
   return (
@@ -262,13 +261,10 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* ── Row 2: Skills | Travel ── */}
+        {/* ── Row 2: Skills ── */}
         <div className="grid grid-cols-2 md:grid-cols-12 gap-4 pb-16">
-          <div id="skills" className="col-span-2 md:col-span-6">
+          <div id="skills" className="col-span-2 md:col-span-12">
             <BentoSkills />
-          </div>
-          <div id="travel" className="col-span-2 md:col-span-6">
-            <BentoTravel />
           </div>
         </div>
 
