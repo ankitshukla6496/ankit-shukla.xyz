@@ -109,26 +109,24 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            {/* Photo gallery — fixed height, natural width, no crop */}
-            <div className="px-4 md:px-8 pb-7 flex flex-row gap-3 items-end">
-              <img
-                src="/images/achievements/awards3.jpeg"
-                alt="ProdHacks Winner — CMU 2025"
-                className="rounded-lg flex-shrink-0 w-auto"
-                style={{ height: '140px', boxShadow: '0 4px 16px rgba(92,64,32,0.12)' }}
-              />
-              <img
-                src="/images/achievements/awards2.jpeg"
-                alt="Samsung Annual Award"
-                className="rounded-lg flex-shrink-0 w-auto"
-                style={{ height: '140px', boxShadow: '0 4px 16px rgba(92,64,32,0.12)' }}
-              />
-              <img
-                src="/images/achievements/awards1.png"
-                alt="Award Certificates"
-                className="rounded-lg flex-shrink-0 w-auto"
-                style={{ height: '140px', boxShadow: '0 4px 16px rgba(92,64,32,0.12)' }}
-              />
+            {/* Photo gallery — fixed height, natural width, no crop, scrollable on mobile */}
+            <div className="px-4 md:px-8 pb-7 flex flex-row gap-3 items-end overflow-x-auto">
+              {[
+                { src: '/images/achievements/awards3.jpeg', alt: 'ProdHacks Winner — CMU 2025' },
+                { src: '/images/achievements/awards2.jpeg', alt: 'Samsung Annual Award' },
+                { src: '/images/achievements/awards4.jpeg', alt: 'Samsung Citizen Award' },
+                { src: '/images/achievements/awards5.jpeg', alt: 'Samsung Excellence Award' },
+                { src: '/images/achievements/awards6.jpeg', alt: 'Samsung Citizen Award — Technology Excellence' },
+                { src: '/images/achievements/awards1.png',  alt: 'Award Certificates' },
+              ].map((img, i) => (
+                <img
+                  key={i}
+                  src={img.src}
+                  alt={img.alt}
+                  className="rounded-lg flex-shrink-0 w-auto"
+                  style={{ height: '140px', boxShadow: '0 4px 16px rgba(92,64,32,0.12)' }}
+                />
+              ))}
             </div>
           </div>
         </section>
