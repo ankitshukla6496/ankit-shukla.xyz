@@ -15,7 +15,7 @@ function InstagramCard() {
       </div>
       <p className="text-xs text-gray-500 flex-1">Life beyond the code and classroom.</p>
       <a
-        href="https://instagram.com"
+        href="https://instagram.com/ankit.shukla.ig"
         target="_blank"
         rel="noopener noreferrer"
         className="text-xs font-semibold text-pink-600 hover:text-pink-700 transition-colors"
@@ -40,7 +40,7 @@ function LinkedInCard() {
       </div>
       <p className="text-xs text-gray-500 flex-1">Connect for product and tech conversations.</p>
       <a
-        href="https://linkedin.com/in/ankitshukla"
+        href="https://www.linkedin.com/in/shukla-ankit/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors"
