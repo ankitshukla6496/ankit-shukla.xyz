@@ -235,8 +235,9 @@ export default function HomePage() {
             {/* Tagline */}
             <div className="px-4 md:px-8 pb-5">
               <p className="text-base leading-relaxed" style={{ color: '#5c4020' }}>
-                I enjoy meeting new people and exploring different cultures. I've traveled to nine countries so far, gaining diverse perspectives along the way. Follow my journey on{' '}
-                <a href="#socials" className="font-medium underline underline-offset-2 hover:opacity-70 transition-opacity" style={{ color: '#5c4020' }}>Instagram</a> for more.
+                I enjoy meeting new people and exploring different cultures.<br />
+                I've traveled to 9 countries so far, gaining diverse perspectives along the way.<br />
+                Follow me on{' '}<a href="#socials" className="font-medium underline underline-offset-2 hover:opacity-70 transition-opacity" style={{ color: '#5c4020' }}>Instagram</a> for more.
               </p>
             </div>
             {/* Image */}
