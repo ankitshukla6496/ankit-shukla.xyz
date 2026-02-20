@@ -83,48 +83,38 @@ export default function HomePage() {
             </div>
             {/* Thin accent line */}
             <div className="mx-4 md:mx-8 mb-5 h-px" style={{ background: 'linear-gradient(to right, #7a604055, transparent)' }} />
-            {/* Achievement cards — full width */}
-            <div className="px-4 md:px-8 pb-5">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {[
-                  { icon: '🏆', title: 'ProdHacks Winner', subtitle: 'Hackathon · CMU · 2025', bg: 'linear-gradient(135deg, #fffbeb, #fff7ed)', border: 'rgba(217,119,6,0.25)' },
-                  { icon: '🔬', title: '3 U.S. Patents', subtitle: 'Imaging & Camera Tech', bg: 'linear-gradient(135deg, #f5f3ff, #ede9fe)', border: 'rgba(124,58,237,0.22)' },
-                  { icon: '📈', title: '3 Promotions', subtitle: '2 Early · 5 Yrs · Samsung', bg: 'linear-gradient(135deg, #eff6ff, #eef2ff)', border: 'rgba(37,99,235,0.22)' },
-                  { icon: '🥇', title: 'Best Patent of Year', subtitle: 'Samsung Annual Awards', bg: 'linear-gradient(135deg, #fffbeb, #fef9c3)', border: 'rgba(202,138,4,0.28)' },
-                  { icon: '🌟', title: 'Samsung Citizen Award', subtitle: 'Technology Excellence · 2020', bg: 'linear-gradient(135deg, #fdf4ff, #fae8ff)', border: 'rgba(168,85,247,0.22)' },
-                  { icon: '🎥', title: 'Best Demo Award', subtitle: 'Illuminare · TechGlanz · 2019', bg: 'linear-gradient(135deg, #fff1f2, #fdf2f8)', border: 'rgba(225,29,72,0.22)' },
-                  { icon: '🌟', title: 'Samsung Citizen Award', subtitle: 'Technology Excellence · 2019', bg: 'linear-gradient(135deg, #f0fdf4, #dcfce7)', border: 'rgba(22,163,74,0.22)' },
-                ].map((a, i) => (
-                  <div key={i} className="rounded-xl p-3 flex flex-col gap-1.5" style={{
-                    background: a.bg,
-                    border: `1px solid ${a.border}`,
-                    boxShadow: '0 2px 8px rgba(92,64,32,0.06)',
-                  }}>
-                    <span className="text-2xl">{a.icon}</span>
-                    <span className="font-semibold text-xs leading-tight" style={{ color: '#3a2a10' }}>{a.title}</span>
-                    <span className="text-[10px] font-mono" style={{ color: '#7a6040' }}>{a.subtitle}</span>
-                  </div>
-                ))}
+            {/* Photo gallery — no cropping, natural aspect ratios */}
+            <div className="px-4 md:px-8 pb-7 flex flex-col gap-3">
+              {/* Row 1: portrait | 2×2 certs | portrait */}
+              <div className="flex flex-row gap-3 items-start">
+                {/* Left portrait — natural size */}
+                <img src="/images/achievements/awards-prodhack.jpeg" alt="ProdHacks Winner — CMU 2025"
+                  className="rounded-xl flex-shrink-0 w-auto"
+                  style={{ height: '320px', boxShadow: '0 4px 20px rgba(92,64,32,0.14)' }} />
+                {/* Centre: 2×2 grid of certificates — full width, natural height */}
+                <div className="flex-1 grid grid-cols-2 gap-3">
+                  {[
+                    { src: '/images/achievements/award-patent.png',   alt: 'Best Patent Award 2022-23' },
+                    { src: '/images/achievements/award-spot.png',     alt: 'Samsung Spot Award 2024' },
+                    { src: '/images/achievements/award-addev.png',    alt: 'Samsung Citizen Award — Advanced Development' },
+                    { src: '/images/achievements/award-dev2mar.png',  alt: 'Samsung Citizen Award — Development to Market' },
+                  ].map((img, i) => (
+                    <img key={i} src={img.src} alt={img.alt}
+                      className="rounded-xl w-full h-auto"
+                      style={{ boxShadow: '0 4px 20px rgba(92,64,32,0.14)' }} />
+                  ))}
+                </div>
+                {/* Right portrait — natural size */}
+                <img src="/images/achievements/award-standing.png" alt="Award Ceremony"
+                  className="rounded-xl flex-shrink-0 w-auto"
+                  style={{ height: '320px', boxShadow: '0 4px 20px rgba(92,64,32,0.14)' }} />
               </div>
-            </div>
-            {/* Photo gallery — fixed height, natural width, no crop, scrollable on mobile */}
-            <div className="px-4 md:px-8 pb-7 flex flex-row gap-3 items-end overflow-x-auto">
-              {[
-                { src: '/images/achievements/awards3.jpeg', alt: 'ProdHacks Winner — CMU 2025' },
-                { src: '/images/achievements/awards2.jpeg', alt: 'Samsung Annual Award' },
-                { src: '/images/achievements/awards4.jpeg', alt: 'Samsung Citizen Award' },
-                { src: '/images/achievements/awards5.jpeg', alt: 'Samsung Excellence Award' },
-                { src: '/images/achievements/awards6.jpeg', alt: 'Samsung Citizen Award — Technology Excellence' },
-                { src: '/images/achievements/awards1.png',  alt: 'Award Certificates' },
-              ].map((img, i) => (
-                <img
-                  key={i}
-                  src={img.src}
-                  alt={img.alt}
-                  className="rounded-lg flex-shrink-0 w-auto"
-                  style={{ height: '140px', boxShadow: '0 4px 16px rgba(92,64,32,0.12)' }}
-                />
-              ))}
+              {/* Row 2: 5th certificate smaller, centred */}
+              <div className="flex justify-center">
+                <img src="/images/achievements/award-team.png" alt="Samsung Excellence Award — Team Awesome"
+                  className="rounded-xl w-auto h-auto"
+                  style={{ height: '180px', boxShadow: '0 4px 20px rgba(92,64,32,0.14)' }} />
+              </div>
             </div>
           </div>
         </section>
