@@ -228,7 +228,7 @@ export default function HomePage() {
                 lineHeight: 1,
                 textShadow: '0 1px 2px rgba(92,64,32,0.12)',
               }}>My Favourite Hobby</h2>
-              <span className="text-xs font-mono tracking-widest uppercase px-2.5 py-1 rounded-full" style={{ color: '#7a6040', background: 'rgba(120,96,64,0.08)', border: '1px solid rgba(120,96,64,0.18)' }}>✈️ Travel</span>
+              <span className="font-mono tracking-widest uppercase px-4 py-2 rounded-full flex items-center gap-2" style={{ color: '#0369a1', background: 'rgba(14,165,233,0.10)', border: '1px solid rgba(14,165,233,0.30)', fontSize: '0.95rem' }}><span className="text-2xl">✈️</span> Travel</span>
             </div>
             {/* Accent line */}
             <div className="mx-4 md:mx-8 mb-5 h-px" style={{ background: 'linear-gradient(to right, #7a604055, transparent)' }} />
